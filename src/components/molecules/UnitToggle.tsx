@@ -7,10 +7,14 @@ interface Props {
 
 export const UnitToggle: React.FC<Props> = ({ unit, onChange }) => (
   <div className="flex items-center gap-2">
-    <label className="text-sm" htmlFor="buttons-wrapper">
+    <span className="text-sm" id="units-label">
       Units:
-    </label>
-    <div className="grid grid-cols-2 rounded-xl border overflow-hidden" id="buttons-wrapper">
+    </span>
+    <div
+      role="group"
+      aria-labelledby="units-label"
+      className="grid grid-cols-2 rounded-xl border overflow-hidden"
+    >
       <button
         className={`px-3 py-1 ${unit === 'C' ? 'bg-white' : 'bg-gray-50 hover:bg-gray-100'}`}
         onClick={() => onChange('C')}
